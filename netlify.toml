@@ -1,0 +1,6 @@
+[build]
+    publish = "dist"
+    command = "yarn generate"
+[build.environment]
+    NODE_VERSION = "14"
+    YARN_VERSION = "1.22.5"

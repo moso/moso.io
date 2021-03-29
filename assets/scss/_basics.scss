@@ -1,0 +1,68 @@
+// Priming the page to use flexbox properly
+*, *::before, *::after { box-sizing: border-box; }
+
+
+// Forcing 16px font-size as my experience with mobile browsers isn't always the best
+html { font-size: $font-size; }
+
+
+// Interpretation of "58 bytes of css to look great nearly everywhere", but with a media-query to handle small devices.
+// Source: https://jrl.ninja/etc/1/
+//
+// `body` is "born" with `8px`/`.5rem` margin. However, when we set this to `auto` to center content,
+// we no longer get the before-mentioned margin. So we compensate with adding `1rem` of padding
+// (I would have added `.5rem` of padding if the default margin was still in place).
+//
+// On "58 bytes", the trick is applied to `main`, however, since I have what reassembles a navbar
+// (that because of semantic reasons doesn't reside inside `main`) I've decided to put it on `body`
+// so I don't have to apply the same styling more than once.
+// We can now also add a `footer` without applying the styling to that as well.
+body {
+    margin: auto; // Centering content
+    padding: 1rem; // Padding content away from the edge for better readability
+    width: 100%; // Stretch all the way
+    font-family: sans-serif; // Let the browser (or browser settings) handle which font is used
+    font-size: 1rem; // Utilizing the `font-size` set on `html`
+    color: #444; // Best of two omens. Source: http://bettermotherfuckingwebsite.com
+    line-height: 1.6; // Source: http://bettermotherfuckingwebsite.com
+
+    @media (min-width: 992px) {
+        max-width: 38rem; // Max width on larger devices (iPad landscape mode and up)
+    }
+}
+
+
+// Resetting visited links to have the same color as initial link.
+// To do this, we need to define the initial link color.
+// Mozilla and Google have handy prefixed specifics for us, however, IE doesn't so the default IE7+ value is set as first color.
+a, a:visited {
+    color: $ie-blue; // IE
+    color: -webkit-link; // Chrome, Safari, Opera
+    color: -moz-hyperlinkText; // Firefox
+
+    @include hover-state {
+        color: inherit; // Inherit default text color on hover
+    }
+}
+
+// Tighter headings for better readability goes a long way.
+// Source: http://bettermotherfuckingwebsite.com
+h1, h2 {
+    line-height: 1.2;
+}
+
+
+// Resetting this design flaw where h1's decrease in font-size.
+// Source: https://w3c.github.io/html/rendering.html#sections-and-headings.
+article {
+    > h1,
+    > div > h1 { // Fixing a design flaw of my own
+        font-size: 2rem;
+    }
+}
+
+p > code {
+    padding: 2px 4px;
+    background-color: $gray;
+    font-size: .875rem;
+}

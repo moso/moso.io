@@ -1,0 +1,32 @@
+.print {
+    display: none;
+}
+
+@media print {
+    html {
+        margin: 10mm;
+    }
+
+    .links,
+    footer,
+    .no-print {
+        display: none !important;
+    }
+
+    .print {
+        display: block;
+    }
+
+    .break {
+        display: inline-block;
+        position: relative;
+        float: none;
+        page-break-before: page;
+        break-before: page;
+    }
+}
+
+@page {
+    size: auto;
+    margin: 0mm;
+}

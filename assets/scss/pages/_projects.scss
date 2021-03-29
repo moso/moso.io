@@ -1,0 +1,46 @@
+#open-source + ul {
+    margin: 0 0 3rem;
+    padding: 0;
+    list-style: none;
+
+    > li {
+        margin: .625rem 0 0;
+
+        > a {
+            font-weight: 700;
+        }
+
+        > ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            > li {
+                font-size: .9125rem;
+                font-weight: normal;
+            }
+        }
+    }
+}
+
+#ive-also-made-things-for + ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    > li {
+        margin: .625rem 0 0;
+        font-weight: 700;
+
+        > ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            > li {
+                font-size: .9125rem;
+                font-weight: normal;
+            }
+        }
+    }
+}

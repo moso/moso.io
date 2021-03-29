@@ -1,0 +1,13 @@
+// Footer
+//
+// A remark here.
+// Layout-wise, I could've opted for an `hr` between `main` and `footer`.
+// However, to make the `hr` look like a thin border-top, it would require more styling
+// than just applying `margin`, `padding`, and `border-top` to `footer`.
+$gray: #eee;
+
+footer {
+    border-top: 1px solid $gray;
+    margin: 2rem 0 0;
+    padding: 1rem 0 0;
+}

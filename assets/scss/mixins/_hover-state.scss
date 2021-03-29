@@ -1,0 +1,14 @@
+// Hover-state mixin.
+// Following Brutalist Web Design guidelines, I know I should leave these as is, but because of aesthetic reasons,
+// I'm very much against letting the browser handle `:hover` and `:focus`-states.
+// And with that follows `:active` and `hover:active`.
+// I've applied styling to `:visited` as well, because of the exact same reason.
+
+@mixin hover-state {
+    &:hover,
+    &:focus,
+    &:active,
+    &:hover:active {
+        @content;
+    }
+}

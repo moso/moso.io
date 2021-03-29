@@ -1,0 +1,20 @@
+// Variables, basics, mixins
+@import 'variables';
+@import 'mixins';
+@import 'basics';
+
+// Dark mode
+@import 'dark-mode';
+
+// Components
+@import 'components/header';
+@import 'components/footer';
+
+// Pages
+@import 'pages/profile';
+@import 'pages/cv';
+@import 'pages/projects';
+@import 'pages/info';
+
+// Print
+@import 'print';

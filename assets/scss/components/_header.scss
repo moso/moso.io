@@ -1,0 +1,29 @@
+// Header
+header {
+    display: flex; // Applying flex here to have it appear like a modern `nav`
+    align-items: center; // Centring the items vertically - one of my favorite things about flexbox
+
+    // Logo
+    svg {
+        height: 26px;
+
+        @media (min-width: 768px) {
+            height: 33px;
+        }
+    }
+
+    .links {
+        display: flex; // I could opt for `display: inline-block` on the `li`'s, however I like flex better, as I can control alignment better
+        margin: 0 0 0 auto; // Right-align the menu
+        padding: 0; // Remove standard 40px `padding-left`
+        list-style: none; // Remove the standard discs
+
+        li {
+            margin-left: .5rem; // Small margin between items
+
+            .active, .nuxt-link-active {
+                font-weight: 700; // Bold active to distinguish the active page from a normal link
+            }
+        }
+    }
+}

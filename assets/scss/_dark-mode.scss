@@ -1,0 +1,48 @@
+// Dark mode
+$dark: #202225;
+
+body {
+    &.darkmode {
+        background-color: $dark;
+        color: $light;
+
+        a, a:visited {
+            color: lighten($ie-blue, 10%);
+
+            @include hover-state {
+                color: inherit; // Inherit default text color on hover
+            }
+        }
+
+        header {
+            .logo {
+                path {
+                    fill: $light;
+                }
+            }
+        }
+
+        .nuxt-content-highlight {
+            > pre {
+                background: $code-dark !important;
+                color: $light !important;
+            }
+        }
+
+        p > code {
+            color: $dark;
+        }
+
+        footer {
+            border-color: lighten($dark, 15%);
+
+            .nuxt, .github, .codepen, .info {
+                path {
+                    &:last-of-type {
+                        fill: $light;
+                    }
+                }
+            }
+        }
+    }
+}

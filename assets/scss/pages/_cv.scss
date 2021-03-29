@@ -1,0 +1,42 @@
+$code-dark: #2f3136;
+$code-light: #f6f8fa;
+$code-blue: #81A1C1;
+$code-green: #A3BE8C;
+$code-teal: #8FBCBB;
+$code-light-blue: #85C0D0;
+
+.nuxt-content-highlight {
+    > pre {
+        padding: .75rem;
+        background: $code-light !important;
+        font-family: monospace !important;
+        font-size: 80%;
+        color: initial !important;
+    }
+
+    .keyword, .operator, .punctuation {
+        color: $code-blue;
+    }
+
+    .method, .function, .property-access {
+        color: $code-light-blue;
+    }
+
+    .string, .template-punctuation {
+        color: $code-green;
+    }
+
+    .console {
+        color: $code-teal;
+    }
+}
+
+#i-love-working-with + ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+        margin: 0;
+    }
+}
