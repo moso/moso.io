@@ -1,9 +1,8 @@
 export default {
     lang: 'en',
-    mobileAppIOS: true,
     name: 'Morten Sørensen - moso.io',
     author: 'Morten Sørensen',
-    description: 'Personal website and online resume of Morten Sørensen',
+    // description: 'Personal website and online resume of Morten Sørensen',
     ogTitle: 'Morten Sørensen - moso.io',
     ogHost: 'https://moso.io',
     ogImage: {
