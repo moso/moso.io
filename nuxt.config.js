@@ -39,6 +39,10 @@ export default {
         }
     },
 
+    generate: {
+        fallback: 'index.html'
+    },
+
     manifest,
 
     build
