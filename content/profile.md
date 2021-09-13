@@ -1,5 +1,6 @@
 ---
 title: Profile
+description: Profile
 ---
 
 <article>

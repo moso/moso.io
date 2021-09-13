@@ -1,5 +1,6 @@
 ---
 title: Information
+description: Information
 ---
 
 # ℹ️ Information
@@ -10,11 +11,11 @@ This website is built on various technologies and philosophies. And because I ap
 
 Completely JAM.
 
-- Vue, JavaScript ES6/7
-- Vite for blazingly fast development
-- Nuxt on top for SSR
-- Nuxt Content for easy Git-based headless CMS
-- Hosted on Netlify
+- [Vue](https://vuejs.org), JavaScript ES6
+- [Vite](https://vitejs.dev) for blazingly fast development
+- [Nuxt](https://nuxtjs.org) on top for SSR
+- [Nuxt Content](https://content.nuxtjs.org) for easy Git-based headless CMS
+- Hosted on [Netlify](https://www.netlify.com)
 
 ## Design
 
