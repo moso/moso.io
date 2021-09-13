@@ -1,3 +1,4 @@
 https://moso-vite.netlify.com/* https://vite.moso.dev/:splat 301!
 
 /*    /index.html   200
+/mads https://mads.moso.io 301
