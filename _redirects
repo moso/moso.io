@@ -1,0 +1,4 @@
+https://moso-site.netlify.com/* https://moso.io/:splat 301!
+
+/*    /index.html   200
+/mads https://mads.moso.io 301

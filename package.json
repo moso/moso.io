@@ -1,0 +1,67 @@
+{
+    "name": "moso-vite",
+    "version": "2022.0.0",
+    "private": true,
+    "scripts": {
+        "postinstall": "husky install",
+        "build": "cross-env NODE_ENV=production vite-ssg build && cp _redirects dist/_redirects && cp _headers dist/_headers",
+        "dev": "vite --port 3000 --open",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "@vueuse/core": "^8.4.1",
+        "@vueuse/head": "^0.7.6",
+        "vue": "^3.2.33",
+        "vue-router": "^4.0.15"
+    },
+    "devDependencies": {
+        "@moso/eslint-config": "^0.2.15",
+        "@types/fs-extra": "^9.0.13",
+        "@types/markdown-it": "^12.2.3",
+        "@types/markdown-it-link-attributes": "^3.0.1",
+        "@typescript-eslint/eslint-plugin": "^5.22.0",
+        "@typescript-eslint/parser": "^5.22.0",
+        "@vitejs/plugin-vue": "^2.3.1",
+        "@vue/eslint-config-prettier": "^7.0.0",
+        "@vue/eslint-config-typescript": "^10.0.0",
+        "critters": "^0.0.16",
+        "cross-env": "^7.0.3",
+        "eslint": "^8.14.0",
+        "eslint-plugin-vue": "^8.7.1",
+        "eslint-plugin-prettier": "^4.0.0",
+        "fs-extra": "^10.1.0",
+        "gray-matter": "^4.0.3",
+        "husky": "^7.0.4",
+        "markdown-it": "^13.0.1",
+        "markdown-it-anchor": "^8.6.2",
+        "markdown-it-link-attributes": "^4.0.0",
+        "pnpm": "^7.0.0",
+        "prettier": "^2.6.2",
+        "sass": "^1.51.0",
+        "typescript": "^4.6.4",
+        "unplugin-auto-import": "^0.7.1",
+        "unplugin-vue-components": "^0.19.3",
+        "vite": "^2.9.7",
+        "vite-plugin-fonts": "^0.4.0",
+        "vite-plugin-inspect": "^0.5.0",
+        "vite-plugin-md": "^0.13.0",
+        "vite-plugin-pages": "^0.23.0",
+        "vite-ssg": "^0.20.0",
+        "vite-svg-loader": "^3.3.0",
+        "vue-eslint-parser": "^8.3.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/moso/moso-vite/moso-vite.git"
+    },
+    "author": {
+        "name": "Morten Sørensen",
+        "email": "morten@moso.io",
+        "url": "https://moso.io"
+    },
+    "license": "MIT",
+        "bugs": {
+        "url": "https://github.com/moso/moso-vite/issues"
+    },
+    "homepage": "https://moso.io"
+    }
