@@ -1,0 +1,111 @@
+@import 'variables';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: $dark;
+    font-family: $font;
+    font-size: 1rem;
+    font-weight: 300;
+    color: $text-color;
+}
+
+#app {
+    width: 100%;
+    min-height: 100vh;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    color: $light;
+    line-height: 1.2;
+}
+
+h1, .h1 { font-size: 3rem; }
+h2, .h2 { font-size: 2rem; }
+h3, .h3 { font-size: 1.75rem; }
+h4, .h4 { font-size: 1.5rem; }
+h5, .h5 { font-size: 1.25rem; }
+h6, .h6 { font-size: 1rem; }
+
+a {
+    color: $light;
+    transition: color 0.2s ease;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:hover:active {
+        color: rgba($light, .9);
+    }
+}
+
+p {
+    margin: 1.5rem 0;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 4rem auto 0;
+    padding: 0 1rem;
+
+    @media (min-width: 992px) {
+        max-width: 38rem;
+    }
+
+    @media (min-width: 1200px) {
+        max-width: 44rem;
+    }
+
+    article {
+        width: 100%;
+    }
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @media (min-width: 992px) {
+        max-width: 38rem;
+    }
+
+    @media (min-width: 1200px) {
+        max-width: 44rem;
+    }
+}
+
+strong {
+    font-weight: 600;
+}

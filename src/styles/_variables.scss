@@ -1,0 +1,12 @@
+// Font
+$font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-monospace: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+$font: "Inter", $font-stack;
+$font-code: "Roboto Mono", $font-monospace;
+
+
+// Colors
+$dark: #212529;
+$light: #fff;
+$text-color: rgba($light, .70);
+$gray: #eee;

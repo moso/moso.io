@@ -4,7 +4,9 @@ import fs from 'fs-extra'
 import Pages from 'vite-plugin-pages'
 import Inspect from 'vite-plugin-inspect'
 import Components from 'unplugin-vue-components/vite'
-import Markdown from 'vite-plugin-md'
+import Markdown from 'vite-plugin-vue-markdown'
+import Prism from 'markdown-it-prism'
+import Anchor from 'markdown-it-anchor'
 import Vue from '@vitejs/plugin-vue'
 import SvgLoader from 'vite-svg-loader'
 import matter from 'gray-matter'
@@ -12,10 +14,18 @@ import AutoImport from 'unplugin-auto-import/vite'
 import LinkAttributes from 'markdown-it-link-attributes'
 import ViteFonts from 'vite-plugin-fonts'
 
+import { slugify } from './src/slugify'
+
+import 'prismjs/components/prism-regex'
+import 'prismjs/components/prism-javascript'
+import 'prismjs/components/prism-typescript'
+import 'prismjs/components/prism-json'
+import 'prismjs/components/prism-markdown'
+
 const isDev = process.env.NODE_ENV !== 'production'
 
 export const aliases = {
-    '@': resolve(__dirname, './src'),
+    '@/': resolve(__dirname, './src'),
     '@/icons': resolve(__dirname, './src/icons'),
     '@/pages': resolve(__dirname, './pages'),
     '@/styles': resolve(__dirname, './src/styles')
@@ -73,8 +83,8 @@ export default defineConfig({
                 const path = resolve(__dirname, route.component.slice(1))
                 const md = fs.readFileSync(path, 'utf-8')
                 const { data } = matter(md)
-                route.meta = Object.assign(route.meta || {}, { frontmatter: data })
 
+                route.meta = Object.assign(route.meta || {}, { frontmatter: data })
                 return route
             }
         }),
@@ -87,6 +97,8 @@ export default defineConfig({
                 quotes: '""\'\''
             },
             markdownItSetup(md) {
+                md.use(Prism)
+                md.use(Anchor, { slugify })
                 md.use(LinkAttributes, {
                     pattern: /^https?:/,
                     attrs: {
