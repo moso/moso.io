@@ -1,0 +1,76 @@
+html:not(.dark) {
+    body {
+        background-color: $light;
+        color: $dark;
+    }
+
+    h1, h2, h3,
+    h4, h5, h6 {
+        color: $pitch-dark;
+    }
+
+    a {
+        color: $pitch-dark;
+
+        @include hover-state() {
+            color: lighten($pitch-dark, 45%);
+        }
+    }
+
+    header {
+        .links {
+            li {
+                a {
+                    color: $pitch-dark;
+
+                    @include hover-state() {
+                        color: lighten($pitch-dark, 45%);
+                    }
+
+                    &.router-link-active {
+                        border-bottom: $border-width solid $pitch-dark;
+
+                        @include hover-state() {
+                            border-bottom: $border-width solid $pitch-dark;
+                        }
+                    }
+
+                    &.link {
+                        @include hover-state() {
+                            border-bottom: $border-width solid $pitch-dark;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .profile-picture {
+        color: $dark;
+        border-bottom: 2px dashed rgba($pitch-dark, .15);
+
+        .position {
+            color: $dark;
+        }
+    }
+
+    pre[class^="language-"] {
+        color: $light;
+    }
+
+    footer {
+        border-top: 2px dashed rgba($pitch-dark, .15);
+
+        p {
+            color: rgba($pitch-dark, .25);
+
+            a {
+                color: rgba($pitch-dark, .25);
+            }
+        }
+    }
+
+    .divider {
+        border-top: 2px dashed rgba($pitch-dark, .15);
+    }
+}

@@ -6,7 +6,12 @@ $font-code: "Roboto Mono", $font-monospace;
 
 
 // Colors
+$pitch-dark: #000;
 $dark: #212529;
 $light: #fff;
 $text-color: rgba($light, .70);
 $gray: #eee;
+
+
+// Magic numbers
+$border-width: 3px;

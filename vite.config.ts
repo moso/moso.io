@@ -14,7 +14,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import LinkAttributes from 'markdown-it-link-attributes'
 import ViteFonts from 'vite-plugin-fonts'
 
-import { slugify } from './src/slugify'
+import { slugify } from './src/logic'
 
 import 'prismjs/components/prism-regex'
 import 'prismjs/components/prism-javascript'
@@ -25,10 +25,10 @@ import 'prismjs/components/prism-markdown'
 const isDev = process.env.NODE_ENV !== 'production'
 
 export const aliases = {
-    '@/': resolve(__dirname, './src'),
-    '@/icons': resolve(__dirname, './src/icons'),
-    '@/pages': resolve(__dirname, './pages'),
-    '@/styles': resolve(__dirname, './src/styles')
+    '@/': resolve(__dirname, './src/'),
+    '@/icons/': resolve(__dirname, './src/icons/'),
+    '@/pages/': resolve(__dirname, './pages/'),
+    '@/styles/': resolve(__dirname, './src/styles/')
 }
 
 export default defineConfig({

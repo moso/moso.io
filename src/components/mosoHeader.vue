@@ -1,7 +1,8 @@
 <template>
     <header>
         <a href="/" class="logo" title="Logo" aria-label="Logo">
-            <Logo />
+            <DarkLogo v-show="isDark" />
+            <LightLogo v-show="!isDark" />
         </a>
         <ul class="links">
             <li>
@@ -43,12 +44,18 @@
                     <LinkedIn />
                 </a>
             </li>
+            <li>
+                <theme-toggle />
+            </li>
         </ul>
     </header>
 </template>
 
 <script setup lang="ts">
-import Logo from '@/icons/logo.svg'
+import { isDark } from '@/logic'
+
+import LightLogo from '@/icons/logo-light.svg'
+import DarkLogo from '@/icons/logo-dark.svg'
 import Profile from '@/icons/profile.svg'
 import Resume from '@/icons/resume.svg'
 import Projects from '@/icons/projects.svg'
@@ -65,11 +72,11 @@ import LinkedIn from '@/icons/linkedin.svg'
 header {
     display: flex;
     align-items: center;
-    padding: .5rem 1rem 0;
+    padding: 1rem 1rem 0;
     height: 40px;
 
     @media (min-width: 992px) {
-        height: 54px;
+        height: 63px;
     }
 
     > a:first-of-type {
@@ -112,7 +119,7 @@ header {
             margin: .5rem 0 .5rem;
             color: $light;
             font-weight: 500;
-            border-bottom: 4px solid transparent;
+            border-bottom: $border-width solid transparent;
             text-decoration: none;
             transition: color .25s ease;
 
@@ -122,16 +129,16 @@ header {
 
             &.link {
                 @include hover-state() {
-                    border-bottom: 4px solid darken($light, 25%);
+                    border-bottom: $border-width solid darken($light, 25%);
                 }
             }
 
             &.router-link-active {
-                border-bottom: 4px solid $light;
+                border-bottom: $border-width solid $light;
                 text-decoration: none;
 
                 @include hover-state() {
-                    border-bottom: 4px solid $light;
+                    border-bottom: $border-width solid $light;
                     text-decoration: none;
                 }
             }
@@ -139,7 +146,7 @@ header {
 
         svg {
             width: auto;
-            height: 24px;
+            height: 18px;
 
             @include hover-state {
                 cursor: pointer;

@@ -14,7 +14,10 @@ declare module '@vue/runtime-core' {
     MosoHeader: typeof import('./components/mosoHeader.vue')['default']
     Page: typeof import('./components/page.vue')['default']
     Profile: typeof import('./components/profile.vue')['default']
+    Project: typeof import('./components/project.vue')['default']
+    Projects: typeof import('./components/projects.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    ThemeToggle: typeof import('./components/theme-toggle.vue')['default']
   }
 }
