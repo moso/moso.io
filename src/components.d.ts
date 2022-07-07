@@ -18,6 +18,7 @@ declare module '@vue/runtime-core' {
     Projects: typeof import('./components/projects.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Smallprojects: typeof import('./components/smallprojects.vue')['default']
     ThemeToggle: typeof import('./components/theme-toggle.vue')['default']
   }
 }
