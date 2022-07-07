@@ -58,6 +58,41 @@ html:not(.dark) {
         color: $light;
     }
 
+    .project {
+        border-color: rgba($pitch-dark, .1);
+        .project-header {
+            color: $pitch-dark;
+        }
+
+        .project-info {
+            a {
+                color: rgba($pitch-dark, .35);
+
+                @include hover-state() {
+                    color: $dark;
+                }
+            }
+        }
+
+        .project-info-divider {
+            color: rgba($pitch-dark, .35);
+        }
+
+        .project-tags {
+            li {
+                background-color: rgba($gray, .75);
+            }
+        }
+    }
+
+    .small-projects {
+        li {
+            .project-title {
+                color: $pitch-dark;
+            }
+        }
+    }
+
     footer {
         border-top: 2px dashed rgba($pitch-dark, .15);
 
