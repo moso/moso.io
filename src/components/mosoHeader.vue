@@ -129,6 +129,7 @@ header {
 
             &.link {
                 @include hover-state() {
+                    cursor: pointer;
                     border-bottom: $border-width solid darken($light, 25%);
                 }
             }
