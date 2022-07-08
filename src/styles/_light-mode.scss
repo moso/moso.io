@@ -55,7 +55,9 @@ html:not(.dark) {
     }
 
     pre[class^="language-"] {
-        color: $light;
+        border-radius: .25rem;
+        background: $gray !important;
+        color: $pitch-dark;
     }
 
     .project {
