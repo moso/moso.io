@@ -93,5 +93,5 @@ sw.*
 .husky/
 
 # unplugin
-src/components.d.ts
-src/auto-imports.d.ts
+components.d.ts
+auto-imports.d.ts
