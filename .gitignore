@@ -91,3 +91,7 @@ sw.*
 
 # Husky
 .husky/
+
+# unplugin
+src/components.d.ts
+src/auto-imports.d.ts
