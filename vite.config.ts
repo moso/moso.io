@@ -49,9 +49,6 @@ export default defineConfig({
             '@vueuse/core',
             '@vueuse/head',
         ],
-        exclude: [
-            'vue-demi',
-        ]
     },
 
     plugins: [
@@ -91,7 +88,7 @@ export default defineConfig({
 
         Markdown({
             wrapperComponent: 'page',
-            wrapperClasses: '',
+            wrapperClasses: 'page',
             headEnabled: true,
             markdownItOptions: {
                 quotes: '""\'\''
