@@ -12,7 +12,7 @@ import SvgLoader from 'vite-svg-loader';
 import matter from 'gray-matter';
 import AutoImport from 'unplugin-auto-import/vite';
 import LinkAttributes from 'markdown-it-link-attributes';
-import ViteFonts from 'vite-plugin-fonts';
+import { VitePluginFonts } from 'vite-plugin-fonts';
 
 import { slugify } from './src/logic';
 
@@ -59,7 +59,7 @@ export default defineConfig({
             include: [/\.vue$/, /\.md$/]
         }),
 
-        ViteFonts({
+        VitePluginFonts({
             google: {
                 families: [
                     {

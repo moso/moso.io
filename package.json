@@ -2,6 +2,7 @@
     "name": "moso-vite",
     "version": "2022.0.0",
     "private": true,
+    "type": "module",
     "scripts": {
         "postinstall": "husky install",
         "build": "cross-env NODE_ENV=production vite-ssg build && cp _redirects dist/_redirects && cp _headers dist/_headers",
