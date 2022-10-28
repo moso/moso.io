@@ -72,11 +72,12 @@ $code-green: #A3BE8C;
 $code-teal: #8FBCBB;
 $code-light-blue: #85C0D0;
 
-article > div {
+article > div,
+.page {
     > pre {
         padding: .75rem;
         background: $code-dark !important;
-        font-family: monospace !important;
+        font-family: $font-code !important;
         font-size: 90%;
     }
 
