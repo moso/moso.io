@@ -1,10 +1,10 @@
 // slugify strings
-import { remove } from 'diacritics'
+import { remove } from 'diacritics';
 // dark mode
-import { useDark } from '@vueuse/core'
+import { useDark } from '@vueuse/core';
 
-const rControl = /[\u0000-\u001F]/g
-const rSpecial = /[\s~`!@#$%^&*()\-_+=[\]{}|\\;:"'<>,.?/]+/g
+const rControl = /[\u0000-\u001F]/g;
+const rSpecial = /[\s~`!@#$%^&*()\-_+=[\]{}|\\;:"'<>,.?/]+/g;
 
 export const slugify = (str: string): string => {
     return (
@@ -21,7 +21,7 @@ export const slugify = (str: string): string => {
         .replace(/^(\d)/, '_$1')
         // lowercase
         .toLowerCase()
-    )
-}
+    );
+};
 
-export const isDark = useDark()
+export const isDark = useDark();

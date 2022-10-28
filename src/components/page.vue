@@ -8,23 +8,23 @@
     defineProps({
         frontmatter: {
             type: Object,
-            required: true
+            required: true,
         },
-    })
+    });
 
-    const router = useRouter()
-    const content = ref<HTMLDivElement>()
+    const router = useRouter();
+    const content = ref<HTMLDivElement>();
 
     onMounted(() => {
         const navigate = () => {
             if(location.hash) {
                 document.querySelector(decodeURIComponent(location.hash))
-                    ?.scrollIntoView({ behavior: 'smooth' })
+                    ?.scrollIntoView({ behavior: 'smooth' });
             }
-        }
+        };
 
         const handleAnchors = (event: MouseEvent & { target: HTMLElement }) => {
-            const link = event.target.closest('a')
+            const link = event.target.closest('a');
             if(
                 !event.defaultPrevented
                 && link
@@ -37,25 +37,25 @@
                 && !event.shiftKey
                 && !event.altKey
             ) {
-                const url = new URL(link.href)
+                const url = new URL(link.href);
 
-                if (url.origin !== window.location.origin) return
-                event.preventDefault()
+                if (url.origin !== window.location.origin) return;
+                event.preventDefault();
 
-                const { pathname, hash } = url
+                const { pathname, hash } = url;
                 if (hash && (!pathname || pathname === location.pathname)) {
-                    window.history.replaceState({}, '', hash)
-                    navigate()
+                    window.history.replaceState({}, '', hash);
+                    navigate();
                 }
                 else {
-                    router.push({ path: pathname, hash })
+                    router.push({ path: pathname, hash });
                 }
             }
-        }
+        };
 
-        useEventListener(window, 'hashchange', navigate)
-        useEventListener(content.value!, 'click', handleAnchors, { passive: false })
-        navigate()
-        setTimeout(navigate, 500)
+        useEventListener(window, 'hashchange', navigate);
+        useEventListener(content.value!, 'click', handleAnchors, { passive: false });
+        navigate();
+        setTimeout(navigate, 500);
     })
 </script>

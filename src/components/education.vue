@@ -7,26 +7,27 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from 'vue';
+import { Education } from '@/types';
 
 export default defineComponent({
     data: () => ({
         educations: [
             {
                 'period': 'Mar, 2016',
-                'title': 'Webintegrator'
+                'title': 'Webintegrator',
             },
             {
                 'period': 'Sep, 2012',
-                'title': 'IT-Supporter'
+                'title': 'IT-Supporter',
             },
             {
                 'period': 'Sep, 2012',
-                'title': 'CCNA'
-            }
-        ]
-    })
-})
+                'title': 'CCNA',
+            },
+        ] as Education[]
+    }),
+});
 </script>
 
 <style lang="scss" scoped>

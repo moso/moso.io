@@ -3,6 +3,6 @@
   "arrowParens": "always",
   "proseWrap": "never",
   "singleQuote": true,
-  "trailingComma": "none",
+  "trailingComma": "es5",
   "tabWidth": 4
 }

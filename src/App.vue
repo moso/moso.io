@@ -13,7 +13,7 @@ useHead({
         { property: 'og:type', content: 'website' },
         { property: 'twitter:card', content: 'summary_large_image' },
         { property: 'twitter:creator', content: '@mosolicious' },
-        { property: 'twitter:site', content: '@mosolicious' }
+        { property: 'twitter:site', content: '@mosolicious' },
     ]
-})
+});
 </script>

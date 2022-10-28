@@ -13,7 +13,7 @@
                     <span>website</span>
                 </a>
             </div>
-            <p class="project-description">{{project.text}}</p>
+            <p class="project-description">{{project.description}}</p>
             <ul class="project-tags" v-show="project.tags">
                 <li v-for="(tag, index) in project.tags" :key="index">
                     <span># {{tag}}</span>
@@ -24,12 +24,13 @@
 </template>
 
 <script setup lang="ts">
-import GitHubIcon from '@/icons/github-small.svg'
-import Globe from '@/icons/globe.svg'
+import GitHubIcon from '@/icons/github-small.svg';
+import Globe from '@/icons/globe.svg';
 </script>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from 'vue';
+import { Project } from '@/types';
 
 export default defineComponent({
     data: () => ({
@@ -39,7 +40,7 @@ export default defineComponent({
                 githubLink: 'https://github.com/moso/eslint-config',
                 githubShort: '@moso/eslint-config',
                 url: '',
-                text: 'Opinionated collection of ESLint configurations, using best practices for core JavaScript and several frameworks including Vue 3, and React. Made for making consistent code across many projects, as setting up ESLint is sometimes a task in itself.',
+                description: 'Opinionated collection of ESLint configurations, using best practices for core JavaScript and several frameworks including Vue 3, and React. Made for making consistent code across many projects, as setting up ESLint is sometimes a task in itself.',
                 tags: ['ESLint', 'JavaScript', 'Vue', 'React'],
             },
             {
@@ -47,13 +48,12 @@ export default defineComponent({
                 githubLink: 'https://github.com/moso/flexgrid',
                 githubShort: '@moso/flexgrid',
                 url: 'https://flexgrid.io',
-                text: 'Free and open-source CSS grid-system based on flexbox. Flexgrid helps you build both simple and advanced grids for your modern sites and webapps. It\'s easy to hack into a new project, or adapt into a current one. Created before Bootstrap went full flexbox in version 4, and still used by many.',
+                description: 'Free and open-source CSS grid-system based on flexbox. Flexgrid helps you build both simple and advanced grids for your modern sites and webapps. It\'s easy to hack into a new project, or adapt into a current one. Created before Bootstrap went full flexbox in version 4, and still used by many.',
                 tags: ['Flexbox', 'CSS', 'Grid'],
             },
-        ]
-    })
-})
-
+        ] as Project[]
+    }),
+});
 </script>
 
 <style lang="scss" scoped>

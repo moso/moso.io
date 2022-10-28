@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "es2016",
+        "target": "es2022",
         "module": "esnext",
         "strict": true,
         "esModuleInterop": true,
@@ -17,22 +17,22 @@
         "jsx": "preserve",
         "types": [
             "vite/client",
-            "vite-plugin-pages/client"
+            "vite-plugin-pages/client",
         ],
         "lib": [
             "ESNext",
             "DOM",
             "DOM.Iterable",
-            "ScriptHost"
+            "ScriptHost",
         ],
         "baseUrl": ".",
         "paths": {
             "@/*": ["./src/*"],
             "@/icons/*": ["./src/icons/*"],
             "@/pages/*": ["./pages/*"],
-            "@/styles/*": ["./src/styles/*"]
+            "@/styles/*": ["./src/styles/*"],
         }
     },
     "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue"],
-    "exclude": ["dist", "node_modules"]
+    "exclude": ["dist", "node_modules"],
 }

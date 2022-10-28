@@ -6,13 +6,13 @@
 </template>
 
 <script setup lang="ts">
-import { isDark } from '@/logic'
-import Sun from '@/icons/sun.svg'
-import Moon from '@/icons/moon.svg'
+import { isDark } from '@/logic';
+import Sun from '@/icons/sun.svg';
+import Moon from '@/icons/moon.svg';
 
 const toggleTheme = () => {
-    isDark.value = !isDark.value
-}
+    isDark.value = !isDark.value;
+};
 </script>
 
 <style lang="scss" scoped>

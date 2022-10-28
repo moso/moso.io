@@ -4,9 +4,9 @@ description: List of my personal projects and stuff I've worked on
 ---
 
 <script setup lang="ts">
-import projects from '../src/components/projects.vue'
-import smallprojects from '../src/components/smallprojects.vue'
-import divider from '../src/components/divider.vue'
+import projects from '../src/components/projects.vue';
+import smallprojects from '../src/components/smallprojects.vue';
+import divider from '../src/components/divider.vue';
 </script>
 
 # Projects

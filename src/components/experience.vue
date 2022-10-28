@@ -7,7 +7,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue"
+import { defineComponent } from 'vue';
+import { Experience } from '@/types';
 
 export default defineComponent({
     data: () => ({
@@ -15,41 +16,41 @@ export default defineComponent({
             {
                 'period': 'Oct 2019 - present',
                 'title': 'Interface Consultant',
-                'location': 'Netcompany'
+                'location': 'Netcompany',
             },
             {
                 'period': 'May 2019 - Jul 2019',
                 'title': 'Web Developer',
-                'location': 'Tea Solutions'
+                'location': 'Tea Solutions',
             },
             {
                 'period': 'Oct 2018 - May 2019',
                 'title': 'Freelance',
-                'location': 'Various'
+                'location': 'Various',
             },
             {
                 'period': 'Apr 2018 - Sep 2018',
                 'title': 'Front-End Developer',
-                'location': 'Aidgency'
+                'location': 'Aidgency',
             },
             {
                 'period': 'Oct 2017 - Apr 2018',
                 'title': 'Interface Consultant',
-                'location': 'Netcompany'
+                'location': 'Netcompany',
             },
             {
                 'period': 'Apr 2017 - Oct 2017',
                 'title': 'Lead Front-End Developer',
-                'location': 'Indexed'
+                'location': 'Indexed',
             },
             {
                 'period': 'Apr 2015 - Apr 2017',
                 'title': 'Front-End Developer',
-                'location': 'Eyeforce'
-            }
-        ]
-    })
-})
+                'location': 'Eyeforce',
+            },
+        ] as Experience[]
+    }),
+});
 </script>
 
 <style lang="scss" scoped>
@@ -76,7 +77,7 @@ article > div {
         padding: .75rem;
         background: $code-dark !important;
         font-family: monospace !important;
-        font-size: 80%;
+        font-size: 90%;
     }
 
     .keyword, .operator, .punctuation {

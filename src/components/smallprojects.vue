@@ -8,7 +8,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue"
+import { defineComponent } from 'vue';
+import { Project } from '@/types';
 
 export default defineComponent({
     data: () => ({
@@ -31,11 +32,11 @@ export default defineComponent({
             },
             {
                 title: 'The Danish Immigration Service',
-                description: 'Portal for foreign nationals'
-            }
-        ]
-    })
-})
+                description: 'Portal for foreign nationals',
+            },
+        ] as Project[]
+    }),
+});
 </script>
 
 <style lang="scss" scoped>

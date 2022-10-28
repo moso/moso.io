@@ -24,12 +24,6 @@
                 </router-link>
             </li>
             <li>
-                <a href="https://moso.dev" class="link" target="_blank" rel="noopener" title="Blog">
-                    <span class="md-visible">Blog</span>
-                    <Blog class="md-hidden" />
-                </a>
-            </li>
-            <li>
                 <a href="https://github.com/moso" target="_blank" rel="noopener" title="GitHub">
                     <GitHub />
                 </a>
@@ -52,17 +46,16 @@
 </template>
 
 <script setup lang="ts">
-import { isDark } from '@/logic'
+import { isDark } from '@/logic';
 
-import LightLogo from '@/icons/logo-light.svg'
-import DarkLogo from '@/icons/logo-dark.svg'
-import Profile from '@/icons/profile.svg'
-import Resume from '@/icons/resume.svg'
-import Projects from '@/icons/projects.svg'
-import Blog from '@/icons/blog.svg'
-import GitHub from '@/icons/github.svg'
-import Twitter from '@/icons/twitter.svg'
-import LinkedIn from '@/icons/linkedin.svg'
+import LightLogo from '@/icons/logo-light.svg';
+import DarkLogo from '@/icons/logo-dark.svg';
+import Profile from '@/icons/profile.svg';
+import Resume from '@/icons/resume.svg';
+import Projects from '@/icons/projects.svg';
+import GitHub from '@/icons/github.svg';
+import Twitter from '@/icons/twitter.svg';
+import LinkedIn from '@/icons/linkedin.svg';
 </script>
 
 <style lang="scss" scoped>
@@ -72,8 +65,12 @@ import LinkedIn from '@/icons/linkedin.svg'
 header {
     display: flex;
     align-items: center;
-    padding: 1rem 1rem 0;
+    padding: .5rem 1rem 0;
     height: 40px;
+
+    @media (min-width: 460px) {
+        padding: 1rem 1rem 0;
+    }
 
     @media (min-width: 992px) {
         height: 63px;
@@ -84,7 +81,11 @@ header {
 
         svg {
             width: auto;
-            height: 35px;
+            height: 20px;
+
+            @media (min-width: 460px) {
+                height: 30px;
+            }
 
             @media (min-width: 768px) {
                 height: 40px;
@@ -100,12 +101,20 @@ header {
 .links {
     display: flex;
     align-items: center;
-    margin: 0 0 0 auto;
+    margin: .5rem 0 0 auto;
     padding: 0;
     list-style: none;
 
+    @media (min-width: 768px) {
+        margin: 0 0 0 auto;
+    }
+
     & > * + *  {
-        margin-left: 1.2rem;
+        margin-left: 0.75rem;
+
+        @media (min-width: 460px) {
+            margin-left: 1.2rem;
+        }
     }
 
     li {
