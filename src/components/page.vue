@@ -1,5 +1,5 @@
 <template>
-    <article ref="content">
+    <article ref="content" class="article">
         <slot />
     </article>
 </template>
