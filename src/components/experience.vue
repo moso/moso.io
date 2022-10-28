@@ -65,6 +65,8 @@ export default defineComponent({
 </style>
 
 <style lang="scss">
+@import '@/styles/variables';
+
 $code-dark: #2f3136;
 $code-light: #f6f8fa;
 $code-blue: #81A1C1;
