@@ -7,7 +7,7 @@
         "importHelpers": true,
         "incremental": true,
         "skipLibCheck": true,
-        "moduleResolution": "node",
+        "moduleResolution": "bundler",
         "allowJs": true,
         "resolveJsonModule": true,
         "noUnusedLocals": true,
@@ -18,21 +18,22 @@
         "types": [
             "vite/client",
             "vite-plugin-pages/client",
+            "node"
         ],
         "lib": [
             "ESNext",
             "DOM",
             "DOM.Iterable",
-            "ScriptHost",
+            "ScriptHost"
         ],
         "baseUrl": ".",
         "paths": {
             "@/*": ["./src/*"],
             "@/icons/*": ["./src/icons/*"],
             "@/pages/*": ["./pages/*"],
-            "@/styles/*": ["./src/styles/*"],
+            "@/styles/*": ["./src/styles/*"]
         }
     },
     "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue"],
-    "exclude": ["dist", "node_modules"],
+    "exclude": ["dist", "node_modules"]
 }
