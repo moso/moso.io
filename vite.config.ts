@@ -1,26 +1,19 @@
-import { resolve, join } from 'path';
+import { join, resolve } from 'path';
 import { defineConfig } from 'vite';
 import fs from 'fs-extra';
 import Pages from 'vite-plugin-pages';
 import Inspect from 'vite-plugin-inspect';
 import Components from 'unplugin-vue-components/vite';
 import Markdown from 'vite-plugin-vue-markdown';
-import Prism from 'markdown-it-prism';
+import Shiki from 'markdown-it-shiki';
 import Anchor from 'markdown-it-anchor';
 import Vue from '@vitejs/plugin-vue';
 import SvgLoader from 'vite-svg-loader';
 import matter from 'gray-matter';
 import AutoImport from 'unplugin-auto-import/vite';
 import LinkAttributes from 'markdown-it-link-attributes';
-import { VitePluginFonts } from 'vite-plugin-fonts';
 
 import { slugify } from './src/logic';
-
-import 'prismjs/components/prism-regex';
-import 'prismjs/components/prism-javascript';
-import 'prismjs/components/prism-typescript';
-import 'prismjs/components/prism-json';
-import 'prismjs/components/prism-markdown';
 
 const isDev = process.env.NODE_ENV !== 'production';
 
@@ -34,12 +27,12 @@ export const aliases = {
 export default defineConfig({
     resolve: {
         alias: [
-            { find: /~(.+)/, replacement: join(process.cwd(), './node_modules/$1') },
-            { find: /@\//, replacement: join(process.cwd(), './src') + '/' },
-            { find: /@\/icons/, replacement: join(process.cwd(), './src/icons') + '/' },
-            { find: /@\/pages/, replacement: join(process.cwd(), './pages') + '/' },
-            { find: /@\/styles/, replacement: join(process.cwd(), './src/styles') + '/' },
-        ]
+            { find: /~(.+)/, replacement: `${join(process.cwd(), './node_modules/$1')}` },
+            { find: /@\//, replacement: `${join(process.cwd(), './src')}/` },
+            { find: /@\/icons/, replacement: `${join(process.cwd(), './src/icons')}/` },
+            { find: /@\/pages/, replacement: `${join(process.cwd(), './pages')}/` },
+            { find: /@\/styles/, replacement: `${join(process.cwd(), './src/styles')}/` },
+        ],
     },
 
     optimizeDeps: {
@@ -53,22 +46,7 @@ export default defineConfig({
 
     plugins: [
         Vue({
-            include: [/\.vue$/, /\.md$/]
-        }),
-
-        VitePluginFonts({
-            google: {
-                families: [
-                    {
-                        name: 'Inter',
-                        styles: 'wght@300;400;500;600',
-                    },
-                    {
-                        name: 'Roboto Mono',
-                        styles: 'wght@300;500',
-                    },
-                ]
-            },
+            include: [/\.vue$/, /\.md$/],
         }),
 
         SvgLoader(),
@@ -83,7 +61,7 @@ export default defineConfig({
 
                 route.meta = Object.assign(route.meta || {}, { frontmatter: data });
                 return route;
-            }
+            },
         }),
 
         Markdown({
@@ -91,17 +69,19 @@ export default defineConfig({
             wrapperClasses: 'page',
             headEnabled: true,
             markdownItOptions: {
-                quotes: '""\'\''
+                quotes: '""\'\'',
             },
             markdownItSetup(md) {
-                md.use(Prism);
+                md.use(Shiki, {
+                    theme: 'nord',
+                });
                 md.use(Anchor, { slugify });
                 md.use(LinkAttributes, {
                     pattern: /^https?:/,
                     attrs: {
                         target: '_blank',
                         rel: 'noopener',
-                    }
+                    },
                 });
             },
         }),
@@ -123,16 +103,17 @@ export default defineConfig({
         }),
 
         Inspect({
-            enabled: !isDev ? true : false,
+            enabled: !isDev,
         }),
     ],
 
     server: {
         fs: {
             strict: true,
-        }
+        },
     },
 
+    // @ts-expect-error
     ssgOptions: {
         script: 'async',
         formatting: 'minify',
