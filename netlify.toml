@@ -1,10 +1,10 @@
 [build.environment]
   NPM_FLAGS = "--version"
-  NODE_VERSION = "17"
+  NODE_VERSION = "18"
 
 [build]
   publish = "dist"
-  command = "pnpm run build"
+  command = "pnpm build"
 
 [[redirects]]
     from = "/*"
