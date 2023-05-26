@@ -7,5 +7,6 @@ dist-ssr
 node_modules
 .idea/
 *.log
+.husky/
 components.d.ts
 auto-imports.d.ts
