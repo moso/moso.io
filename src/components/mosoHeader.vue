@@ -1,3 +1,16 @@
+<script setup lang="ts">
+import { isDark } from '@/logic';
+
+import LightLogo from '@/icons/logo-light.svg';
+import DarkLogo from '@/icons/logo-dark.svg';
+import Profile from '@/icons/profile.svg';
+import Resume from '@/icons/resume.svg';
+import Projects from '@/icons/projects.svg';
+import GitHub from '@/icons/github.svg';
+import Twitter from '@/icons/twitter.svg';
+import LinkedIn from '@/icons/linkedin.svg';
+</script>
+
 <template>
     <header>
         <a href="/" class="logo" title="Logo" aria-label="Logo">
@@ -44,19 +57,6 @@
         </ul>
     </header>
 </template>
-
-<script setup lang="ts">
-import { isDark } from '@/logic';
-
-import LightLogo from '@/icons/logo-light.svg';
-import DarkLogo from '@/icons/logo-dark.svg';
-import Profile from '@/icons/profile.svg';
-import Resume from '@/icons/resume.svg';
-import Projects from '@/icons/projects.svg';
-import GitHub from '@/icons/github.svg';
-import Twitter from '@/icons/twitter.svg';
-import LinkedIn from '@/icons/linkedin.svg';
-</script>
 
 <style lang="scss" scoped>
 @import '@/styles/variables';
