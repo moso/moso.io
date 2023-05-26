@@ -1,3 +1,22 @@
+<script setup lang="ts">
+import { Education } from '@/types';
+
+const educations: Education[] = [
+    {
+        period: 'Mar, 2016',
+        title: 'Webintegrator',
+    },
+    {
+        period: 'Sep, 2012',
+        title: 'IT-Supporter',
+    },
+    {
+        period: 'Sep, 2012',
+        title: 'CCNA',
+    },
+];
+</script>
+
 <template>
     <ul class="list">
         <li v-for="(education, index) in educations" :key="index">
@@ -5,30 +24,6 @@
         </li>
     </ul>
 </template>
-
-<script lang="ts">
-import { defineComponent } from 'vue';
-import { Education } from '@/types';
-
-export default defineComponent({
-    data: () => ({
-        educations: [
-            {
-                'period': 'Mar, 2016',
-                'title': 'Webintegrator',
-            },
-            {
-                'period': 'Sep, 2012',
-                'title': 'IT-Supporter',
-            },
-            {
-                'period': 'Sep, 2012',
-                'title': 'CCNA',
-            },
-        ] as Education[]
-    }),
-});
-</script>
 
 <style lang="scss" scoped>
 .list {

@@ -1,60 +1,59 @@
+<script setup lang="ts">
+import { Project } from '@/types';
+import GitHubIcon from '@/icons/github-small.svg';
+import Globe from '@/icons/globe.svg';
+
+const projects: Project[] = [
+    {
+        title: 'eslint-config',
+        githubLink: 'https://github.com/moso/eslint-config',
+        githubShort: '@moso/eslint-config',
+        url: '',
+        description: 'Opinionated collection of ESLint configurations, using best practices for core JavaScript and several frameworks including Vue 3, and React. Made for making consistent code across many projects, as setting up ESLint is sometimes a task in itself.',
+        tags: ['ESLint', 'JavaScript', 'Vue', 'React'],
+    },
+    {
+        title: 'Flexgrid',
+        githubLink: 'https://github.com/moso/flexgrid',
+        githubShort: '@moso/flexgrid',
+        url: 'https://flexgrid.io',
+        description: 'Free and open-source CSS grid-system based on flexbox. Flexgrid helps you build both simple and advanced grids for your modern sites and webapps. It\'s easy to hack into a new project, or adapt into a current one. Created before Bootstrap went full flexbox in version 4, and still used by many.',
+        tags: ['Flexbox', 'CSS', 'Grid'],
+    },
+];
+</script>
+
 <template>
     <div class="projects">
-        <div class="project" v-for="(project, index) in projects" :key="index">
+        <div v-for="(project, index) in projects" :key="index" class="project">
             <div class="project-header">{{ project.title }}</div>
             <div class="project-info">
                 <a class="project-link" :href="project.githubLink" target="_blank" rel="noopener" :aria-label="project.title">
                     <span><GitHubIcon /></span>
-                    <span>{{project.githubShort}}</span>
+                    <span>{{ project.githubShort }}</span>
                 </a>
-                <span class="project-info-divider" v-show="project.url">—</span>
-                <a class="project-secondary-link" :href="project.url" target="_blank" rel="noopener" :aria-label="project.title" v-show="project.url">
+                <span v-show="project.url" class="project-info-divider">—</span>
+                <a
+                    v-show="project.url"
+                    class="project-secondary-link"
+                    :href="project.url"
+                    target="_blank"
+                    rel="noopener"
+                    :aria-label="project.title"
+                >
                     <span><Globe /></span>
                     <span>website</span>
                 </a>
             </div>
-            <p class="project-description">{{project.description}}</p>
-            <ul class="project-tags" v-show="project.tags">
-                <li v-for="(tag, index) in project.tags" :key="index">
-                    <span># {{tag}}</span>
+            <p class="project-description">{{ project.description }}</p>
+            <ul v-show="project.tags" class="project-tags">
+                <li v-for="tag in project.tags" :key="tag">
+                    <span># {{ tag }}</span>
                 </li>
             </ul>
         </div>
     </div>
 </template>
-
-<script setup lang="ts">
-import GitHubIcon from '@/icons/github-small.svg';
-import Globe from '@/icons/globe.svg';
-</script>
-
-<script lang="ts">
-import { defineComponent } from 'vue';
-import { Project } from '@/types';
-
-export default defineComponent({
-    data: () => ({
-        projects: [
-            {
-                title: 'eslint-config',
-                githubLink: 'https://github.com/moso/eslint-config',
-                githubShort: '@moso/eslint-config',
-                url: '',
-                description: 'Opinionated collection of ESLint configurations, using best practices for core JavaScript and several frameworks including Vue 3, and React. Made for making consistent code across many projects, as setting up ESLint is sometimes a task in itself.',
-                tags: ['ESLint', 'JavaScript', 'Vue', 'React'],
-            },
-            {
-                title: 'Flexgrid',
-                githubLink: 'https://github.com/moso/flexgrid',
-                githubShort: '@moso/flexgrid',
-                url: 'https://flexgrid.io',
-                description: 'Free and open-source CSS grid-system based on flexbox. Flexgrid helps you build both simple and advanced grids for your modern sites and webapps. It\'s easy to hack into a new project, or adapt into a current one. Created before Bootstrap went full flexbox in version 4, and still used by many.',
-                tags: ['Flexbox', 'CSS', 'Grid'],
-            },
-        ] as Project[]
-    }),
-});
-</script>
 
 <style lang="scss" scoped>
 @import '@/styles/variables';

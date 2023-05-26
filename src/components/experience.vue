@@ -1,3 +1,45 @@
+<script setup lang="ts">
+import { Experience } from '@/types';
+
+const experiences: Experience[] = [
+    {
+        period: 'Oct 2019 - present',
+        title: 'Interface Consultant',
+        location: 'Netcompany',
+    },
+    {
+        period: 'May 2019 - Jul 2019',
+        title: 'Web Developer',
+        location: 'Tea Solutions',
+    },
+    {
+        period: 'Oct 2018 - May 2019',
+        title: 'Freelance',
+        location: 'Various',
+    },
+    {
+        period: 'Apr 2018 - Sep 2018',
+        title: 'Front-End Developer',
+        location: 'Aidgency',
+    },
+    {
+        period: 'Oct 2017 - Apr 2018',
+        title: 'Interface Consultant',
+        location: 'Netcompany',
+    },
+    {
+        period: 'Apr 2017 - Oct 2017',
+        title: 'Lead Front-End Developer',
+        location: 'Indexed',
+    },
+    {
+        period: 'Apr 2015 - Apr 2017',
+        title: 'Front-End Developer',
+        location: 'Eyeforce',
+    },
+];
+</script>
+
 <template>
     <ul class="list">
         <li v-for="(experience, index) in experiences" :key="index">
@@ -5,53 +47,6 @@
         </li>
     </ul>
 </template>
-
-<script lang="ts">
-import { defineComponent } from 'vue';
-import { Experience } from '@/types';
-
-export default defineComponent({
-    data: () => ({
-        experiences: [
-            {
-                'period': 'Oct 2019 - present',
-                'title': 'Interface Consultant',
-                'location': 'Netcompany',
-            },
-            {
-                'period': 'May 2019 - Jul 2019',
-                'title': 'Web Developer',
-                'location': 'Tea Solutions',
-            },
-            {
-                'period': 'Oct 2018 - May 2019',
-                'title': 'Freelance',
-                'location': 'Various',
-            },
-            {
-                'period': 'Apr 2018 - Sep 2018',
-                'title': 'Front-End Developer',
-                'location': 'Aidgency',
-            },
-            {
-                'period': 'Oct 2017 - Apr 2018',
-                'title': 'Interface Consultant',
-                'location': 'Netcompany',
-            },
-            {
-                'period': 'Apr 2017 - Oct 2017',
-                'title': 'Lead Front-End Developer',
-                'location': 'Indexed',
-            },
-            {
-                'period': 'Apr 2015 - Apr 2017',
-                'title': 'Front-End Developer',
-                'location': 'Eyeforce',
-            },
-        ] as Experience[]
-    }),
-});
-</script>
 
 <style lang="scss" scoped>
 .list {

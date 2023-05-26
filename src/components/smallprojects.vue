@@ -1,43 +1,38 @@
+<script setup lang="ts">
+import { Project } from '@/types';
+
+const smallprojects: Project[] = [
+    {
+        title: 'FIFA',
+        description: 'Modern web- and next-gen streaming-platform',
+    },
+    {
+        title: 'Smarter Airports',
+        description: 'Airport platform',
+    },
+    {
+        title: 'The Danish Customs and Tax Administration',
+        description: 'Claimant portal',
+    },
+    {
+        title: 'The Danish Agency for Digitisation',
+        description: 'Common Design System, Frontend Styleguide',
+    },
+    {
+        title: 'The Danish Immigration Service',
+        description: 'Portal for foreign nationals',
+    },
+];
+</script>
+
 <template>
     <ul class="small-projects">
         <li v-for="(project, index) in smallprojects" :key="index">
-            <div class="project-title">{{project.title}}</div>
-            <div class="project-description">{{project.description}}</div>
+            <div class="project-title">{{ project.title }}</div>
+            <div class="project-description">{{ project.description }}</div>
         </li>
     </ul>
 </template>
-
-<script lang="ts">
-import { defineComponent } from 'vue';
-import { Project } from '@/types';
-
-export default defineComponent({
-    data: () => ({
-        smallprojects: [
-            {
-                title: 'FIFA',
-                description: 'Modern web- and next-gen streaming-platform',
-            },
-            {
-                title: 'Smarter Airports',
-                description: 'Airport platform',
-            },
-            {
-                title: 'The Danish Customs and Tax Administration',
-                description: 'Claimant portal',
-            },
-            {
-                title: 'The Danish Agency for Digitisation',
-                description: 'Common Design System, Frontend Styleguide'
-            },
-            {
-                title: 'The Danish Immigration Service',
-                description: 'Portal for foreign nationals',
-            },
-        ] as Project[]
-    }),
-});
-</script>
 
 <style lang="scss" scoped>
 @import '@/styles/variables';
