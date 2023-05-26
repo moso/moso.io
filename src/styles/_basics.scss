@@ -110,3 +110,13 @@ footer {
 strong {
     font-weight: 600;
 }
+
+html.dark .shiki-light {
+    display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    .shiki-light {
+        display: none;
+    }
+}

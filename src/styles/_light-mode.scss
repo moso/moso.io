@@ -110,4 +110,14 @@ html:not(.dark) {
     .divider {
         border-top: 2px dashed rgba($pitch-dark, .15);
     }
+
+    .shiki-dark {
+        display: none;
+    }
+}
+
+@media (prefers-color-scheme: light), (prefers-color-scheme: no-preference) {
+    .shiki-dark {
+        display: none;
+    }
 }
