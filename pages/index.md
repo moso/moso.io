@@ -1,6 +1,6 @@
 ---
 title: Morten Sørensen - moso.io
-description: ...
+description: Personal website and portfolio
 ---
 
 <script setup lang="ts">
