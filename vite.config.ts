@@ -4,7 +4,7 @@ import fs from 'fs-extra';
 import Pages from 'vite-plugin-pages';
 import Inspect from 'vite-plugin-inspect';
 import Components from 'unplugin-vue-components/vite';
-import Markdown from 'unplugin-vue-markdown/vite';
+import Markdown from 'vite-plugin-vue-markdown';
 import Shiki from 'markdown-it-shiki';
 import Anchor from 'markdown-it-anchor';
 import Vue from '@vitejs/plugin-vue';
@@ -68,6 +68,9 @@ export default defineConfig({
             wrapperComponent: 'page',
             wrapperClasses: 'page',
             headEnabled: true,
+            exportFrontmatter: false,
+            exposeFrontmatter: false,
+            exposeExcerpt: false,
             markdownItOptions: {
                 quotes: '""\'\'',
             },
