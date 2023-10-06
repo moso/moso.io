@@ -3,7 +3,7 @@ import { onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { useEventListener } from '@vueuse/core';
 
-defineProps({
+const { frontmatter } = defineProps({
     frontmatter: {
         type: Object,
         required: true,
@@ -57,7 +57,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <article ref="content" class="article">
+    <article ref="content" class="article" :class="frontmatter.class">
         <slot />
     </article>
 </template>
