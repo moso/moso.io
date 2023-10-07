@@ -1,21 +1,23 @@
-import { join, resolve } from 'path';
+import { join, resolve } from 'node:path';
 import { defineConfig } from 'vite';
 import fs from 'fs-extra';
 import Pages from 'vite-plugin-pages';
 import Inspect from 'vite-plugin-inspect';
 import Components from 'unplugin-vue-components/vite';
-import Markdown from 'vite-plugin-vue-markdown';
-import Shiki from 'markdown-it-shiki';
+import Markdown from 'unplugin-vue-markdown/vite';
 import Anchor from 'markdown-it-anchor';
 import Vue from '@vitejs/plugin-vue';
 import SvgLoader from 'vite-svg-loader';
 import matter from 'gray-matter';
 import AutoImport from 'unplugin-auto-import/vite';
 import LinkAttributes from 'markdown-it-link-attributes';
+import { bundledLanguages, getHighlighter } from 'shikiji';
 
-import { slugify } from './src/logic';
+import { slugify } from './src/helpers/slugify';
 
 const isDev = process.env.NODE_ENV !== 'production';
+
+const promises: Promise<any>[] = [];
 
 export const aliases = {
     '@/': resolve(__dirname, './src/'),
@@ -40,26 +42,30 @@ export default defineConfig({
             'vue',
             'vue-router',
             '@vueuse/core',
-            '@vueuse/head',
         ],
     },
 
     plugins: [
         Vue({
             include: [/\.vue$/, /\.md$/],
+            reactivityTransform: true,
+            script: {
+                defineModel: true,
+            },
         }),
-
-        SvgLoader(),
 
         Pages({
             extensions: ['vue', 'md'],
-            pagesDir: 'pages',
+            dirs: 'pages',
             extendRoute(route) {
                 const path = resolve(__dirname, route.component.slice(1));
-                const md = fs.readFileSync(path, 'utf-8');
-                const { data } = matter(md);
 
-                route.meta = Object.assign(route.meta || {}, { frontmatter: data });
+                if (path.endsWith('.md')) {
+                    const md = fs.readFileSync(path, 'utf-8');
+                    const { data } = matter(md);
+                    route.meta = Object.assign(route.meta || {}, { frontmatter: data });
+                }
+
                 return route;
             },
         }),
@@ -74,11 +80,26 @@ export default defineConfig({
             markdownItOptions: {
                 quotes: '""\'\'',
             },
-            markdownItSetup(md) {
-                md.use(Shiki, {
-                    theme: 'nord',
+            async markdownItSetup(md) {
+                const shiki = await getHighlighter({
+                    themes: ['nord'],
+                    langs: Object.keys(bundledLanguages) as any,
                 });
+
+                md.use((markdown) => {
+                    markdown.options.highlight = (code, lang) => {
+                        return shiki.codeToHtml(code, {
+                            lang,
+                            themes: {
+                                light: 'nord',
+                                dark: 'nord',
+                            },
+                        });
+                    };
+                });
+
                 md.use(Anchor, { slugify });
+
                 md.use(LinkAttributes, {
                     pattern: /^https?:/,
                     attrs: {
@@ -96,18 +117,26 @@ export default defineConfig({
                 '@vueuse/core',
                 '@vueuse/head',
             ],
-            dts: 'src/auto-imports.d.ts',
         }),
 
         Components({
             extensions: ['vue', 'md'],
-            dts: 'src/components.d.ts',
+            dts: true,
             include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
         }),
 
         Inspect({
             enabled: !isDev,
         }),
+
+        SvgLoader(),
+
+        {
+            name: 'await',
+            async closeBundle() {
+                await Promise.all(promises);
+            },
+        },
     ],
 
     server: {
@@ -116,7 +145,6 @@ export default defineConfig({
         },
     },
 
-    // @ts-expect-error
     ssgOptions: {
         script: 'async',
         formatting: 'minify',
