@@ -3,23 +3,17 @@ title: Resume - moso.io
 description: Short resume of Morten Sørensen
 ---
 
-<script setup lang="ts">
-import divider from '../src/components/divider.vue';
-import experience from '../src/components/experience.vue';
-import education from '../src/components/education.vue';
-</script>
-
 # Resume
 
-<divider />
+<PageDivider />
 
 ## Experience
 
-<experience />
+<ExperienceList />
 
 ## Education
 
-<education />
+<EducationList />
 
 ## I love working with
 
