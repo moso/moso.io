@@ -5,12 +5,6 @@ import App from '@/App.vue';
 
 import '@/styles/app.scss';
 
-declare module 'vue-router' {
-    interface RouteMeta {
-        frontmatter: any;
-    }
-}
-
 const routes = autoRoutes.map((route) => {
     return {
         ...route,
