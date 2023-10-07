@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { isDark } from '@/logic';
+import { isDark } from '@/helpers/darkmode';
 
 import LightLogo from '@/icons/logo-light.svg';
 import DarkLogo from '@/icons/logo-dark.svg';
