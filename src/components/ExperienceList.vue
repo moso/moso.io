@@ -3,7 +3,12 @@ import { Experience } from '@/types';
 
 const experiences: Experience[] = [
     {
-        period: 'Oct 2019 - present',
+        period: 'Mar 2024 - present',
+        title: 'Front-End Developer',
+        location: 'TV MIDTVEST',
+    },
+    {
+        period: 'Oct 2019 - Jan 2024',
         title: 'Interface Consultant',
         location: 'Netcompany',
     },
