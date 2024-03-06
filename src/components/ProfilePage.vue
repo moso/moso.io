@@ -3,14 +3,14 @@
         <img src="/images/profile.jpg" alt="Morten Sørensen" />
 
         <div class="name">Morten S&oslash;rensen</div>
-        <div class="position">Interface Consultant at Netcompany</div>
+        <div class="position">Front-End Developer at TV MIDTVEST</div>
     </div>
 
     <h1 class="hidden">Profile</h1>
 
     <h1 id="hi">👋🏻 Hi,</h1>
 
-    <p>I'm Morten, a Danish Front-End Engineer, currently making my skillset useful as an <em>Interface Consultant</em> at <a href="https://netcompany.com" target="_blank" rel="noopener" title="Netcompany">Netcompany</a>.</p>
+    <p>I'm Morten, a Danish Front-End Engineer, currently making my skillset useful at <a href="https://tvmidtvest.dk" target="_blank" rel="noopener" title="TV MIDTVEST">TV MIDTVEST</a>.</p>
 
     <p>With 15+ years of experience with making websites, I see myself as a veteran. I often tell people that I'm from the generation who designed websites for IE6 in XHTML Strict, which, for the unfamiliar, was utterly horrible.</p>
 
