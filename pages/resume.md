@@ -29,8 +29,8 @@ description: Short resume of Morten Sørensen
 ## Contact
 
 ```javascript
-const $x = 'morten';
-const $y = 'moso';
+const identity = ['morten', 'moso'];
+const email = identity.join('@');
 
-console.log(`${$x}@${$y}.io`);
+console.log(email);
 ```
