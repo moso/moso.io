@@ -173,13 +173,13 @@ header {
 
 .md-visible {
     @media (max-width: 768px) {
-        display: none;
+        display: none !important;
     }
 }
 
 .md-hidden {
     @media (min-width: 768px) {
-        display: none;
+        display: none !important;
     }
 }
 </style>
