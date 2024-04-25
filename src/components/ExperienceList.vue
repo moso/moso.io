@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Experience } from '@/types';
+import type { Experience } from '@/types';
 
 const experiences: Experience[] = [
     {
@@ -67,18 +67,19 @@ const experiences: Experience[] = [
 <style lang="scss">
 @import '@/styles/variables';
 
-$code-dark: #2f3136;
-$code-light: #f6f8fa;
-$code-blue: #81A1C1;
-$code-green: #A3BE8C;
-$code-teal: #8FBCBB;
-$code-light-blue: #85C0D0;
+$code-dark: $color-mantle;
+$code-light: $color-text;
+$code-blue: $color-blue;
+$code-green: $color-green;
+$code-teal: $color-teal;
+$code-light-blue: $color-sky;
 
 article > div,
 .page {
     > pre {
         padding: .75rem;
         background: $code-dark !important;
+        border-radius: $border-radius;
         font-family: $font-code !important;
         font-size: 90%;
     }

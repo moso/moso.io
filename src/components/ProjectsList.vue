@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { Project } from '@/types';
 import GitHubIcon from '@/icons/github-small.svg';
 import Globe from '@/icons/globe.svg';
+
+import type { Project } from '@/types';
 
 const projects: Project[] = [
     {
@@ -67,7 +68,7 @@ const projects: Project[] = [
     margin-top: 1.5rem;
     padding: 1rem 1.5rem .25rem;
     border: 1px solid rgba($gray, .25);
-    border-radius: .25rem;
+    border-radius: $border-radius;
 
     .project-header {
         margin: 0 0 .5rem;

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Project } from '@/types';
+import type { Project } from '@/types';
 
 const smallprojects: Project[] = [
     {
