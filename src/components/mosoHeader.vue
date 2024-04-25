@@ -9,6 +9,7 @@ import Projects from '@/icons/projects.svg';
 import GitHub from '@/icons/github.svg';
 import Twitter from '@/icons/twitter.svg';
 import LinkedIn from '@/icons/linkedin.svg';
+import Mastodon from '@/icons/mastodon.svg';
 </script>
 
 <template>
@@ -36,7 +37,7 @@ import LinkedIn from '@/icons/linkedin.svg';
                     <Resume class="md-hidden" />
                 </router-link>
             </li>
-            <li>
+            <li class="md-visible">
                 <a href="https://github.com/moso" target="_blank" rel="noopener" title="GitHub">
                     <GitHub />
                 </a>
@@ -44,6 +45,11 @@ import LinkedIn from '@/icons/linkedin.svg';
             <li>
                 <a href="https://twitter.com/mosolicious" target="_blank" rel="noopener" title="Twitter">
                     <Twitter />
+                </a>
+            </li>
+            <li>
+                <a href="https://mastodon.moso.dev/@morten" target="_blank" rel="noopener me" title="Mastodon">
+                    <Mastodon />
                 </a>
             </li>
             <li>
