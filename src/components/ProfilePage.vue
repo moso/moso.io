@@ -1,6 +1,6 @@
 <template>
     <div class="profile-picture">
-        <img src="/images/profile.jpg" alt="Morten Sørensen" />
+        <img src="/images/profile.png" alt="Morten Sørensen" />
 
         <div class="name">Morten S&oslash;rensen</div>
         <div class="position">Front-End Developer at TV MIDTVEST</div>
@@ -38,8 +38,8 @@
     }
 
     img {
-        width: 125px;
-        height: 125px;
+        width: 150px;
+        height: 150px;
         border-radius: 50%;
         border: 2px solid $gray;
     }
