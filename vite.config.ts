@@ -8,7 +8,7 @@ import Markdown from 'unplugin-vue-markdown/vite';
 import Anchor from 'markdown-it-anchor';
 import Vue from '@vitejs/plugin-vue';
 import SvgLoader from 'vite-svg-loader';
-import matter from 'gray-matter';
+import Matter from 'gray-matter';
 import AutoImport from 'unplugin-auto-import/vite';
 import LinkAttributes from 'markdown-it-link-attributes';
 import { bundledLanguages, getHighlighter } from 'shikiji';
@@ -48,7 +48,6 @@ export default defineConfig({
     plugins: [
         Vue({
             include: [/\.vue$/, /\.md$/],
-            reactivityTransform: true,
             script: {
                 defineModel: true,
             },
@@ -62,7 +61,7 @@ export default defineConfig({
 
                 if (path.endsWith('.md')) {
                     const md = fs.readFileSync(path, 'utf-8');
-                    const { data } = matter(md);
+                    const { data } = Matter(md);
                     route.meta = Object.assign(route.meta || {}, { frontmatter: data });
                 }
 
