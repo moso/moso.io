@@ -5,13 +5,39 @@ $font: "Inter", $font-stack;
 $font-code: "Roboto Mono", $font-monospace;
 
 
+// Catppuccin Mocha
+$color-crust: #11111b;
+$color-mantle: #181825;
+$color-base: #1e1e2e;
+$color-surface0: #313244;
+$color-surface1: #45475a;
+$color-surface2: #585b70;
+$color-overlay0: #6c7086;
+$color-overlay1: #7f849c;
+$color-overlay2: #9399b2;
+$color-subtext0: #a6adc8;
+$color-subtext1: #bac2de;
+$color-text: #cdd6f4;
+$color-lavender: #b4befe;
+$color-blue: #89b4fa;
+$color-sapphire: #05090a;
+$color-sky: #89dceb;
+$color-teal: #94e2d5;
+$color-green: #a6e3a1;
+$color-yellow: #f9e2af;
+$color-peach: #fab387;
+$color-maroon: #eba0ac;
+$color-red: #f38ba8;
+
 // Colors
 $pitch-dark: #000;
-$dark: #212529;
+$dark: $color-base;
 $light: #fff;
-$text-color: rgba($light, .70);
-$gray: #eee;
+$text-color: $color-text;
+$gray: $color-subtext1;
 
 
 // Magic numbers
 $border-width: 3px;
+
+$border-radius: .25rem;
