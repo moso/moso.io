@@ -1,4 +1,5 @@
 import { join, resolve } from 'node:path';
+import crypto from 'crypto';
 import { defineConfig } from 'vite';
 import fs from 'fs-extra';
 import Pages from 'vite-plugin-pages';
@@ -16,6 +17,8 @@ import { bundledLanguages, getHighlighter } from 'shikiji';
 import { slugify } from './src/helpers/slugify';
 
 const isDev = process.env.NODE_ENV !== 'production';
+
+const nonceHash = crypto.randomBytes(32).toString('base64');
 
 const promises: Promise<any>[] = [];
 
@@ -142,6 +145,24 @@ export default defineConfig({
         fs: {
             strict: true,
         },
+        headers: {
+            'Referrer-Policy': 'no-referrer',
+            'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload',
+            'X-Content-Type-Options': 'nosniff',
+            'X-Download-Opotions': 'noopen',
+            'X-Permitted-Cross-Domain-Policies': 'none',
+            'X-XSS-Protection': 0,
+            'Content-Security-Policy': [
+                `default-src 'self'`,
+                `script-src 'strict-dynamic' 'nonce-${nonceHash}' 'unsafe-inline'`,
+                `style-src 'self' https://fonts.bunny.net 'unsafe-inline'`,
+                `font-src 'self' https://fonts.bunny.net`,
+                `img-src 'self' data:`,
+                `object-src 'none'`,
+                `frame-ancestors 'none'`,
+                `require-trusted-types-for 'script'`,
+            ].join('; '),
+        },
     },
 
     ssgOptions: {
@@ -150,6 +171,6 @@ export default defineConfig({
     },
 
     html: {
-        cspNonce: 'kp8GH1pGmH9QLq40ggonVw==',
+        cspNonce: nonceHash,
     },
 });
