@@ -3,7 +3,6 @@
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   X-Content-Type-Options: nosniff
   X-Download-Opotions: noopen
-  # X-Frame-Options: SAMEORIGIN
   X-Permitted-Cross-Domain-Policies: none
   X-XSS-Protection: 0
   Content-Security-Policy: "style-src 'self' https://fonts.bunny.net 'unsafe-inline'; font-src 'self' https://fonts.bunny.net; img-src 'self' data:; frame-ancestors 'self'; object-src 'none'; require-trusted-types-for 'script';"
