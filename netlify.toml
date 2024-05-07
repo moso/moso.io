@@ -15,4 +15,3 @@
     package = "@netlify/plugin-csp-nonce"
     [plugin.inputs]
         reportOnly = false
-        unsafeEval = false
