@@ -152,16 +152,7 @@ export default defineConfig({
             'X-Download-Opotions': 'noopen',
             'X-Permitted-Cross-Domain-Policies': 'none',
             'X-XSS-Protection': 0,
-            'Content-Security-Policy': [
-                `default-src 'self'`,
-                `script-src 'strict-dynamic' 'nonce-${nonceHash}' 'unsafe-inline'`,
-                `style-src 'self' https://fonts.bunny.net 'unsafe-inline'`,
-                `font-src 'self' https://fonts.bunny.net`,
-                `img-src 'self' data:`,
-                `object-src 'none'`,
-                `frame-ancestors 'none'`,
-                `require-trusted-types-for 'script'`,
-            ].join('; '),
+            'Content-Security-Policy': `default-src 'self'; script-src 'strict-dynamic' 'nonce-${nonceHash}' 'unsafe-inline'; style-src 'self' https://fonts.bunny.net 'unsafe-inline'; font-src 'self' https://fonts.bunny.net; img-src 'self' data:;object-src 'none'; frame-ancestors 'none'; require-trusted-types-for 'script';`,
         },
     },
 
