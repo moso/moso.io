@@ -150,6 +150,6 @@ export default defineConfig({
     },
 
     html: {
-        cspNonce: 'nonce-UELCKlNwG8egiZmq198An45NHMCk50Ac',
+        cspNonce: '{SERVER-CSP-NONCE}',
     },
 });
