@@ -145,14 +145,6 @@ export default defineConfig({
         fs: {
             strict: true,
         },
-        headers: {
-            'Referrer-Policy': 'no-referrer',
-            'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload',
-            'X-Content-Type-Options': 'nosniff',
-            'X-Download-Opotions': 'noopen',
-            'X-Permitted-Cross-Domain-Policies': 'none',
-            'X-XSS-Protection': 0,
-        },
     },
 
     ssgOptions: {
