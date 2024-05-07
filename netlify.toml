@@ -10,3 +10,8 @@
     from = "/*"
     to = "/index.html"
     status = 200
+
+[[plugins]]
+    package = "@netlify/plugin-csp-nonce"
+    [plugin.inputs]
+        reportOnly = false
