@@ -148,4 +148,8 @@ export default defineConfig({
         script: 'async',
         formatting: 'minify',
     },
+
+    html: {
+        cspNonce: 'kp8GH1pGmH9QLq40ggonVw==',
+    },
 });
