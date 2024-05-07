@@ -16,4 +16,3 @@
     [plugins.inputs]
         reportOnly = false
         reportUri = ""
-        unsafeEval = false
