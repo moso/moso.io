@@ -1,4 +1,5 @@
 import { join, resolve } from 'node:path';
+import crypto from 'node:crypto';
 import { defineConfig } from 'vite';
 import fs from 'fs-extra';
 import Pages from 'vite-plugin-pages';
@@ -147,5 +148,10 @@ export default defineConfig({
     ssgOptions: {
         script: 'async',
         formatting: 'minify',
+    },
+
+    html: {
+        // cspNonce: isDev ? null : import.meta.env.VITE_CSP_NONCE,
+        cspNonce: crypto.randomBytes(32).toString('base64'),
     },
 });
