@@ -146,7 +146,7 @@ export default defineConfig({
             strict: true,
         },
         headers: {
-            'Content-Security-Policy': `script-src 'strict-dynamic' 'nonce-${nonceHash}' 'unsafe-inline';`,
+            'Content-Security-Policy': `"script-src 'strict-dynamic' 'nonce-${nonceHash}' 'unsafe-inline';"`,
         },
     },
 
