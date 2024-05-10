@@ -11,7 +11,7 @@
     to = "/index.html"
     status = 200
 
-[[plugin]]
+[[plugins]]
     package = "@netlify/plugin-csp-nonce"
     [plugins.inputs]
         reportOnly = false
