@@ -6,7 +6,7 @@ import { useHead } from '@vueuse/head';
 const httpReq = new XMLHttpRequest();
 
 onBeforeMount(() => {
-    httpReq.open('GET', document.location.toString(), false);
+    httpReq.open('GET', document.location.toString(), true);
     httpReq.send(null);
     httpReq.onload = () => {
         let headers = httpReq.getAllResponseHeaders().split('\n')
