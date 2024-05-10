@@ -1,4 +1,5 @@
 import { join, resolve } from 'node:path';
+import crypto from 'node:crypto';
 import { defineConfig } from 'vite';
 import fs from 'fs-extra';
 import Pages from 'vite-plugin-pages';
@@ -16,6 +17,8 @@ import { bundledLanguages, getHighlighter } from 'shikiji';
 import { slugify } from './src/helpers/slugify';
 
 const isDev = process.env.NODE_ENV !== 'production';
+
+const cspNonce = crypto.randomBytes(32).toString('base64');
 
 const promises: Promise<any>[] = [];
 
@@ -147,5 +150,9 @@ export default defineConfig({
     ssgOptions: {
         script: 'async',
         formatting: 'minify',
+    },
+
+    html: {
+        cspNonce: `nonce-${cspNonce}`,
     },
 });
