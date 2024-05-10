@@ -145,9 +145,6 @@ export default defineConfig({
         fs: {
             strict: true,
         },
-        headers: {
-            'Content-Security-Policy': `"script-src 'strict-dynamic' 'nonce-${nonceHash}' 'unsafe-inline';"`,
-        },
     },
 
     ssgOptions: {
