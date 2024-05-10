@@ -1,4 +1,3 @@
-// import crypto from 'crypto';
 import { join, resolve } from 'node:path';
 import { defineConfig } from 'vite';
 import fs from 'fs-extra';
@@ -17,8 +16,6 @@ import { bundledLanguages, getHighlighter } from 'shikiji';
 import { slugify } from './src/helpers/slugify';
 
 const isDev = process.env.NODE_ENV !== 'production';
-
-// const nonceHash = crypto.randomBytes(32).toString('base64');
 
 const promises: Promise<any>[] = [];
 
@@ -144,6 +141,9 @@ export default defineConfig({
     server: {
         fs: {
             strict: true,
+        },
+        headers: {
+            'content-security-policy': 'script-src \'self\' \'unsafe-inline\'; style-src \'self\' https://fonts.bunny.net \'unsafe-inline\'; font-src \'self\' https://fonts.bunny.net; img-src \'self\' data:; frame-ancestors \'self\'; object-src \'none\'; require-trusted-types-for \'script\';',
         },
     },
 
