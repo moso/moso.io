@@ -142,9 +142,6 @@ export default defineConfig({
         fs: {
             strict: true,
         },
-        headers: {
-            'content-security-policy': 'script-src \'self\' \'unsafe-inline\'; style-src \'self\' https://fonts.bunny.net \'unsafe-inline\'; font-src \'self\' https://fonts.bunny.net; img-src \'self\' data:; frame-ancestors \'self\'; object-src \'none\'; require-trusted-types-for \'script\';',
-        },
     },
 
     ssgOptions: {
