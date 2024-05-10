@@ -6,6 +6,8 @@ import { useHead } from '@vueuse/head';
 onBeforeMount(() => {
     const headers = new Headers();
 
+    console.log(headers);
+
     if (headers.has('content-security-policy')) {
         console.log('CSP headers:', headers.get('content-security-policy'));
     };
