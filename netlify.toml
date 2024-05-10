@@ -16,4 +16,4 @@
 
     [plugins.inputs]
         reportOnly = false
-        unsafeEval = false
+        unsafeEval = true
