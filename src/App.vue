@@ -6,19 +6,15 @@ import { useHead } from '@vueuse/head';
 const httpReq = new XMLHttpRequest();
 
 onBeforeMount(() => {
-    httpReq.open('GET', document.location.toString(), true);
+    httpReq.open('GET', document.location.toString(), false);
     httpReq.send(null);
     httpReq.onload = () => {
-        let headers = httpReq.getAllResponseHeaders();
-        headers = headers.split(/\n|\r|\r\n/g).reduce((a: any, b: any) => {
-            if (b.length) {
-                const [key, value] = b.split(': ');
-                a[key] = value;
-            }
-            return a;
-        }, {});
+        let headers = httpReq.getAllResponseHeaders().split('\n')
+            .map(x => x.split(/: */, 2))
+            .filter(x => x[0])
+            .reduce((ac: any, x: any) => { ac[x[0]] = x[1]; return ac; }, {});
 
-        console.log(headers);
+        console.log(headers['content-security-policy']);
     };
 });
 
