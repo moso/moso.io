@@ -5,7 +5,6 @@
     "private": true,
     "packageManager": "pnpm@9.1.0",
     "scripts": {
-        "postinstall": "husky install",
         "build": "cross-env NODE_ENV=production vite-ssg build && cp _redirects dist/_redirects && cp _headers dist/_headers",
         "dev": "vite --port 3000 --open",
         "preview": "vite preview",
@@ -39,7 +38,6 @@
         "eslint-plugin-vue": "^9.26.0",
         "fs-extra": "^11.2.0",
         "gray-matter": "^4.0.3",
-        "husky": "^9.0.11",
         "markdown-it": "^14.1.0",
         "markdown-it-anchor": "^8.6.7",
         "markdown-it-link-attributes": "^4.0.1",
