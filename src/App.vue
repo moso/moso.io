@@ -1,18 +1,5 @@
 <script setup lang="ts">
-import { onBeforeMount } from 'vue';
 import { useHead } from '@vueuse/head';
-
-// Test of getting the CSP headers
-onBeforeMount(() => {
-    const headers = new Headers();
-
-    console.log(headers);
-
-    if (headers.has('content-security-policy')) {
-        console.log('CSP headers:', headers.get('content-security-policy'));
-    };
-
-});
 
 useHead({
     meta: [
