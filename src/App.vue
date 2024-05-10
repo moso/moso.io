@@ -3,19 +3,13 @@ import { onBeforeMount } from 'vue';
 import { useHead } from '@vueuse/head';
 
 // Test of getting the CSP headers
-const httpReq = new XMLHttpRequest();
-
 onBeforeMount(() => {
-    httpReq.open('GET', document.location.toString(), true);
-    httpReq.send(null);
-    httpReq.onload = () => {
-        let headers = httpReq.getAllResponseHeaders().split('\n')
-            .map(x => x.split(/: */, 2))
-            .filter(x => x[0])
-            .reduce((ac: any, x: any) => { ac[x[0]] = x[1]; return ac; }, {});
+    const headers = new Headers();
 
-        console.log(headers['content-security-policy']);
+    if (headers.has('content-security-policy')) {
+        console.log('CSP headers:', headers.get('content-security-policy'));
     };
+
 });
 
 useHead({
