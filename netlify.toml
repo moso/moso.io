@@ -10,3 +10,18 @@
     from = "/*"
     to = "/index.html"
     status = 200
+
+[[plugins]]
+    package = "netlify-plugin-csp-generator"
+
+    [plugins.inputs]
+        buildDir = "dist"
+
+        [plugins.inputs.policies]
+            scriptSrc = "'strict-dynamic' 'unsafe-inline' 'self'"
+            styleSrc = "'self' https://fonts.bunny.net 'unsafe-inline'"
+            fontSrc = "'self' https://fonts.bunny.net"
+            imgSrc =  "'self' data:"
+            frameAncestors = "'self'"
+            objectSrc = "'none'"
+            requireTrustedTypesFor = "'script'"
