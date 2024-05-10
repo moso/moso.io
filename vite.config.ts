@@ -1,5 +1,5 @@
+// import crypto from 'crypto';
 import { join, resolve } from 'node:path';
-import crypto from 'crypto';
 import { defineConfig } from 'vite';
 import fs from 'fs-extra';
 import Pages from 'vite-plugin-pages';
@@ -18,7 +18,7 @@ import { slugify } from './src/helpers/slugify';
 
 const isDev = process.env.NODE_ENV !== 'production';
 
-const nonceHash = crypto.randomBytes(32).toString('base64');
+// const nonceHash = crypto.randomBytes(32).toString('base64');
 
 const promises: Promise<any>[] = [];
 
@@ -150,9 +150,5 @@ export default defineConfig({
     ssgOptions: {
         script: 'async',
         formatting: 'minify',
-    },
-
-    html: {
-        cspNonce: nonceHash,
     },
 });
