@@ -6,11 +6,7 @@ import { useHead } from '@vueuse/head';
 const httpReq = new XMLHttpRequest();
 
 const parseHttpHeaders = (httpHeaders: any) => {
-    return httpHeaders.split('\n')
-        .map((x: any) => x.split(/: */,2))
-        .filter((x: any) => x[0])
-        .reduce((ac: any, x: any) => { ac[x[0]] = x[1]; return ac; }
-    );
+    return httpHeaders.split('\n').map((x: any) => x);
 }
 
 onBeforeMount(() => {
