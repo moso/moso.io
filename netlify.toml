@@ -1,6 +1,6 @@
 [build.environment]
   NPM_FLAGS = "--version"
-  NODE_VERSION = "18"
+  NODE_VERSION = "20"
 
 [build]
   publish = "dist"
@@ -10,3 +10,10 @@
     from = "/*"
     to = "/index.html"
     status = 200
+
+[[plugins]]
+    package = "@netlify/plugin-csp-nonce"
+
+    [plugins.inputs]
+        reportOnly = false
+        unsafeEval = true
