@@ -5,21 +5,20 @@ import { useHead } from '@vueuse/head';
 // Test of getting the CSP headers
 const httpReq = new XMLHttpRequest();
 
-const parseHttpHeaders = (httpHeaders: any) => {
-    return httpHeaders.split('\n')
-        .map((x: any) => x.split(/; */,2))
-        .filter((x: any) => x[0])
-        .reduce((ac: any, x: any) => { ac[x[0]] = x[1]; return ac; }
-    );
-}
-
 onBeforeMount(() => {
     httpReq.open('GET', document.location.toString(), true);
     httpReq.send(null);
     httpReq.onload = () => {
-        const headers = parseHttpHeaders(httpReq.getAllResponseHeaders());
+        let headers = httpReq.getAllResponseHeaders();
+        headers = headers.split(/\n|\r|\r\n/g).reduce((a: any, b: any) => {
+            if (b.length) {
+                const [key, value] = b.split(': ');
+                a[key] = value;
+            }
+            return a;
+        }, {});
 
-        console.log(headers['content-security-policy']);
+        console.log(headers);
     };
 });
 
