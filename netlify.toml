@@ -11,6 +11,12 @@
     to = "/index.html"
     status = 200
 
+[[redirects]]
+    from = "/mads"
+    to = "https://madswp.moso.io"
+    status = 301
+    force = true
+
 [[plugins]]
     package = "@netlify/plugin-csp-nonce"
 
